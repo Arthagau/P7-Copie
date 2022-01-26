@@ -18,7 +18,6 @@ const LoginForm = () => {
   const loginHandler = async (values, { resetForm }) => {
     await Axios.post("http://localhost:5000/auth/login", values)
       .then((res) => {
-        console.log(res);
         localStorage.setItem("jwtToken", "Bearer" + " " + res.data.jwtToken);
         localStorage.setItem("UserId", res.data.user.id);
         localStorage.setItem("UserName", res.data.user.firstName);

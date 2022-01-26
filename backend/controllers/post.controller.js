@@ -1,5 +1,4 @@
 const { PostModel, CommentModel } = require("../models/Models");
-const { post } = require("../routes/post.routes");
 
 module.exports.createPost = async (req, res, next) => {
   try {

@@ -16,7 +16,6 @@ export default function PostModel({ post, onDelete }) {
     const newdata = { ...data };
     newdata[e.target.id] = e.target.value;
     setData(newdata);
-    console.log(newdata);
   }
 
   /* ----- Récupération des commentaires pour chaque post ----- */

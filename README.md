@@ -6,6 +6,8 @@ Pour la partie front, j'ai décidé d'utiliser React.
 
 Pour lancer ce projet coté back, il va falloir tout d'abord installer node et toutes les dépendances utilisés en écrivant "cd .\backend\" puis "npm i", une fois que tout est installé lancé le serveur en éxécutant "npm start".
 
+Il faut également créer une base de données locale via MySQL pour pouvoir effectuer les différentes requêtes;
+
 Pour lancer la partie front, ouvrez un nouveau terminal et écrivez "cd .\frontend" puis lancer avec "npx parcel src/index.html"
 
 Concernant le fichier .env, je l'ai laissé pour cette version prototype, mais il faudrait l'enlever lors de la publication.
