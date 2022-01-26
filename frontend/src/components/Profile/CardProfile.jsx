@@ -6,8 +6,9 @@ export default function CardProfile() {
   const userName = localStorage.getItem("UserName");
   const userId = localStorage.getItem("UserId");
 
-  let navigate = useNavigate();
+  let navigate = useNavigate(); // permet de naviguer entre les différentes pages
 
+  /* ----- Fonction pour supprimer un utilisateur ----- */
   const deleteUser = (e) => {
     if (
       confirm("Supprimer votre compte et tous les posts liés à ce profil ?")

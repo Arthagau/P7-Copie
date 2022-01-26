@@ -1,10 +1,11 @@
-const { PostModel, CommentModel } = require("../models/Post.model");
+const { PostModel, CommentModel } = require("../models/Models");
 const { post } = require("../routes/post.routes");
 
 module.exports.createPost = async (req, res, next) => {
   try {
     const { body, file, userId, poster } = req;
     if (!file) {
+      // Différentes logiques selon si l'utilisteur ajoute une image ou non
       delete req.body.postImage;
       if (req.body.postMessage.length >= 2) {
         const post = await PostModel.create({
@@ -63,17 +64,6 @@ module.exports.getOnePost = async (req, res) => {
     res.status(200).json(post);
   } catch (error) {
     res.status(400).json("Can't find post !");
-  }
-};
-
-module.exports.updatePost = async (req, res, next) => {
-  try {
-    PostModel.update(
-      { postMessage: req.body.postMessage },
-      { returning: true, where: { id: req.params.id } }
-    ).then(res.status(200).json("Successful request !"));
-  } catch (err) {
-    return res.status(500).json({ message: err });
   }
 };
 

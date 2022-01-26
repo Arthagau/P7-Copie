@@ -2,6 +2,8 @@ const { BOOLEAN } = require("sequelize");
 const Sequelize = require("sequelize");
 const db = require("../config/database");
 
+// Permet d'initaliser les différents models pour la BDD
+
 const PostModel = db.define("post", {
   id: {
     type: Sequelize.INTEGER,
@@ -86,6 +88,7 @@ const CommentModel = db.define("comment", {
   },
 });
 
+/* Permet de créer des associations entre les models, pour connaitre les posts d'un utilisateur par exemple */
 UserModel.hasMany(PostModel, {
   foreignKey: {
     type: Sequelize.INTEGER,

@@ -9,9 +9,13 @@ export default function Posts({ posts, onDelete }) {
           flex-column
           justify-content-around posts"
       >
-        {posts.map((post) => (
-          <PostModel post={post} key={post.id} onDelete={onDelete} />
-        ))}
+        {posts.map(
+          (
+            post // on map les différents posts renvoyés auparavant pour recréer un model pour chaque post
+          ) => (
+            <PostModel post={post} key={post.id} onDelete={onDelete} />
+          )
+        )}
       </div>
     </div>
   );

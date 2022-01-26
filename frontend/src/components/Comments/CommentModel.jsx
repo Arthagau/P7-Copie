@@ -5,6 +5,7 @@ import Axios from "axios";
 export default function CommentModel({ comment, onDelete }) {
   const [checkedUser, setCheckedUser] = useState(false);
 
+  /* ----- Identification de l'utilisateur ----- */
   useEffect(() => {
     checkUser();
     return () => {};
@@ -21,6 +22,7 @@ export default function CommentModel({ comment, onDelete }) {
     }
   }
 
+  /* ----- Suppression de commentaire ----- */
   const deleteComment = (e) => {
     if (confirm("Supprimer le commentaire ?")) {
       e.preventDefault();

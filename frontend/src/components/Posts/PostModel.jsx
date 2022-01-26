@@ -2,17 +2,15 @@ import React, { useState, useEffect } from "react";
 import moment from "moment";
 import Comments from "../Comments/Comments";
 import Axios from "axios";
-import Posts from "./Posts";
 
 export default function PostModel({ post, onDelete }) {
   const postId = post.id;
+
+  /* ----- Récupération des values pour poster un commentaire ----- */
   const [data, setData] = useState({
     comment: "",
     postId: postId,
   });
-  const [comments, setComments] = useState([]);
-  const [checkedUser, setCheckedUser] = useState(false);
-  const [errorMessage, setErrorMessage] = useState();
 
   function handle(e) {
     const newdata = { ...data };
@@ -20,6 +18,9 @@ export default function PostModel({ post, onDelete }) {
     setData(newdata);
     console.log(newdata);
   }
+
+  /* ----- Récupération des commentaires pour chaque post ----- */
+  const [comments, setComments] = useState([]);
 
   useEffect(() => {
     fetchComments();
@@ -33,6 +34,9 @@ export default function PostModel({ post, onDelete }) {
   const updateComments = async () => {
     await fetchComments();
   };
+
+  /* ----- Vérification de l'utilisateur ----- */
+  const [checkedUser, setCheckedUser] = useState(false);
 
   useEffect(() => {
     checkUser();
@@ -49,6 +53,9 @@ export default function PostModel({ post, onDelete }) {
       setCheckedUser(false);
     }
   }
+
+  /* ----- Fonction pour poster un commentaire ----- */
+  const [errorMessage, setErrorMessage] = useState();
 
   const commentHandler = (e) => {
     e.preventDefault();
@@ -67,6 +74,7 @@ export default function PostModel({ post, onDelete }) {
       });
   };
 
+  /* ----- Fonction pour supprimer un post ----- */
   const deletePost = (e) => {
     if (confirm("Supprimer le post ?")) {
       e.preventDefault();
@@ -85,6 +93,7 @@ export default function PostModel({ post, onDelete }) {
     }
   };
 
+  /* ----- Vérification pour savoir si l'utilisateur est connecté ou non ----- */
   const [isLogged, setIsLogged] = useState(false);
 
   useEffect(() => {

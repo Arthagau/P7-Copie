@@ -9,3 +9,5 @@ Pour lancer ce projet coté back, il va falloir tout d'abord installer node et t
 Pour lancer la partie front, ouvrez un nouveau terminal et écrivez "cd .\frontend" puis lancer avec "npx parcel src/index.html"
 
 Concernant le fichier .env, je l'ai laissé pour cette version prototype, mais il faudrait l'enlever lors de la publication.
+
+J'ai du recréer un repo à cause d'un soucis de corruption sur mon précédent repo qui m'empecher de push correctement.

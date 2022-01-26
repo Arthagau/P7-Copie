@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Topbar() {
+  /* ----- Vérification si l'utilisateur est connecté ou non ----- */
   const [isLogged, setIsLogged] = useState(false);
 
   useEffect(() => {

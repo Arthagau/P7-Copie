@@ -9,13 +9,17 @@ export default function Comments({ comments, onDelete }) {
       flex-column
       justify-content-around"
       >
-        {comments.map((comment) => (
-          <CommentModel
-            comment={comment}
-            key={comment.id}
-            onDelete={onDelete}
-          />
-        ))}
+        {comments.map(
+          (
+            comment // on map les différents commentaires renvoyés auparavant pour recréer un model pour chaque commentaire
+          ) => (
+            <CommentModel
+              comment={comment}
+              key={comment.id}
+              onDelete={onDelete}
+            />
+          )
+        )}
       </div>
     </div>
   );

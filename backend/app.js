@@ -23,6 +23,7 @@ app.use("/auth", userRoutes);
 app.use("/post", postRoutes);
 app.use("/comment", commentRoutes);
 
+// permet de créer un chemin d'accès
 app.use("/images", express.static("./images"));
 
 const PORT = process.env.PORT || 5000;

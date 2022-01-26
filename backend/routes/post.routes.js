@@ -13,7 +13,6 @@ router.post(
 router.get("/", postController.getAllPosts);
 router.get("/userPosts/:id", postController.getAllUserPosts);
 router.get("/:id", postController.getOnePost);
-router.put("/:id", postController.updatePost);
 router.delete("/:id", postController.deletePost);
 
 module.exports = router;

@@ -7,6 +7,7 @@ export default function CreatePost({ onUpdate }) {
   const [selectedImage, setSelectedImage] = useState();
   const [errorMessage, setErrorMessage] = useState();
 
+  /* ----- Récupération du message et de l'image ----- */
   const onInputChange = (e) => {
     setInputMessage(e.target.value);
   };
@@ -15,12 +16,14 @@ export default function CreatePost({ onUpdate }) {
     setSelectedImage(e.target.files[0]);
   };
 
+  /* ----- Permet de réinitialiser l'image choisi par l'utilisateur ----- */
   const ref = useRef();
   function handleClick() {
     ref.current.value = "";
     setSelectedImage(null);
   }
 
+  /* ----- Fonction pour poster une publication ----- */
   const postHandler = (e) => {
     e.preventDefault();
     const data = new FormData();

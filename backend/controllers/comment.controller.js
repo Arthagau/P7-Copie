@@ -1,4 +1,4 @@
-const { PostModel, UserModel, CommentModel } = require("../models/Post.model");
+const { UserModel, CommentModel } = require("../models/Models");
 
 module.exports.CreateComment = async (req, res, next) => {
   try {

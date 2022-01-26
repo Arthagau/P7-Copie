@@ -1,5 +1,5 @@
 const { UPSERT } = require("sequelize/dist/lib/query-types");
-const { UserModel, PostModel, CommentModel } = require("../models/Post.model");
+const { UserModel, PostModel, CommentModel } = require("../models/Models");
 
 module.exports.getAllUsers = async (req, res) => {
   const users = await UserModel.findAll();
