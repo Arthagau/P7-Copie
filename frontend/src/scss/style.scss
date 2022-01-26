@@ -1,0 +1,46 @@
+@import "./variable_overrides";
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+.mainContainer {
+  min-height: 89vh;
+}
+
+.background {
+  background-image: url(../images/pexels-pixabay-290595.jpg);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: sticky;
+}
+
+.profilePicture {
+  width: 10%;
+  height: 10%;
+}
+
+.imageProfileCard {
+  width: 30%;
+}
+
+.postName {
+  width: 30%;
+}
+
+.bi {
+  font-size: 1.2rem;
+}
+
+label {
+  font-size: 0.8rem;
+}
+
+input.form-control,
+input.form-control:focus {
+  background: #f0f0ff;
+}
+
+.error {
+  position: absolute;
+  color: red;
+  font-size: 0.5rem;
+}
